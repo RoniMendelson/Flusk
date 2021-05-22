@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>My CV</title>
+    <link rel="stylesheet" href="../static/cv.css">
+    <script src="../static/cv.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="Item1">Roni Mendelson</div>
+    <div class="Item2"><button type="button" class="button"
+onclick="document.getElementById('Item2Det').innerHTML = '3rd year B.Sc. student in Industrial Engineering and Management at Ben Gurion University.<br>\n'+
+'            <br>\n'+
+'            Specializing in information systems.<br>\n'+
+'            <br>\n'+
+'            Psychometric test score - 738<br>\n'+
+'            <br>\n'+
+'            Skills: Java, SQL, R, VBA, JS, HTML.<br>\n'+
+'            <br>\n'+
+'            Languages: Hebrew(Native), English(Advanced)<br>\n'+
+'            <br>\n'+
+'            Looking to integrate into a student position.<br>'">
+Personal Details</button><br>
+        <p class="Item2Det" id="Item2Det">
+        </p></div>
+    <div class="Item3"><button type="button" class="button"
+onclick="document.getElementById('Item3Res').innerHTML = '2018-2022 - B.Sc. in Industrial Engineering and Management at\n'+
+'        Ben Gurion University.<br><br>\n'+
+'            Experience:<br>\n'+
+'        2016-2018 - Security Profiler, Israel Airports Authority\n'+
+'        Duties: Interviewed passengers to evaluate possible security threat and issue passengers pre-flight security classification; in 2017, promoted to task force that visually assesses passengers from inbound flights.\n'+
+'        Functioned under pressure and responded to immediate and unplanned events.<br><br>\n'+
+'            Military Service:<br>\n'+
+'        2012-2014 - released from service with the rank of Sergeant\n'+
+'        Position: Air Force Operations Room Coordinator\n'+
+'        Execution of operational and training flights, working in the operations room regularly and during emergencies.\n'+
+'        Collecting data and transferring it to senior levels, while communicating with aircrafts during missions.\n'+
+'        The job required teamwork, responsibility, attention span, multi-tasking, emergency preparedness, training capabilities and working long shifts while maintaining concentration and alertness.'">
+Resume</button><br>
+        <p class="Item3Res" id="Item3Res">
+        </p></div>
+    <div class="Item4">Contact<br>
+    <p class="Item4Co">
+        Phone: 054-2479542<br>
+        Email: roni.mds10@gmail.com<br>
+<a href="https://www.linkedin.com/in/roni-mendelson-b00a591a6/" target="_blank">My Linkedin Page</a><br>
+        <a href="{{ url_for('static',filename='Roni Mendelson CV.pdf')}}" download="RM.CV">Download my CV</a>
+        <a href="{{ url_for('cv_fetch')}}" >Contacts</a>
+    </p></div>
+    <img id="photo" onmouseover="this.src='../static/Me.jpg'" onmouseout="this.src='../static/Me1.JPG'" height="100px" width="100px" src="../static/Me1.JPG">
+</div>
+
+</body>
+</html>

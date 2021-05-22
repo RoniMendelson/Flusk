@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment8</title>
+</head>
+<body>
+{% if user %}
+<h2>this page is connected to {{ user.firstname |upper }}{{ user.lastname |upper}}'s CV</h2>
+{% else %}
+<h2>this page is not connected to any cv</h2>
+{% endif %}
+
+<h2>My Hobbies</h2>
+<ol>
+    {% for hobby in hobbies %}
+    <li>{{ hobby }}</li>
+    {% endfor %}
+</ol>
+{% include 'about.html' %}
+
+{% extends 'maple.html' %}
+{% block maple %}
+<h3>my family adopted her when she was 7 month old</h3>
+{% endblock %}
+</body>
+</html>

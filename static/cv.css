@@ -1,0 +1,130 @@
+* {
+    background-color: #F5F5F5;
+}
+.grid-container {
+    display: grid;
+
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 130px 130px 130px 130px;
+    /*grid-template-areas: 'Headline Headline Headline Headline'
+     'Personal Experience Experience Experience'
+     'Personal Experience Experience Experience'
+     'Personal Experience Experience Experience'*/
+}
+.Item1{
+    background-color: #A09DAA;
+    width: 75vw;
+    grid-area:Headline;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    padding:50px;
+    border: gray solid;
+    text-align: center;
+    font-size: 40px;
+    font-family: fantasy;
+    animation: color-change 1s infinite;
+    animation-duration: 5s;
+}
+@keyframes color-change {
+    0% { color: #CAE5FF; }
+    50% { color: #A0B1CF; }
+    100% { color: #CAE5FF; }
+}
+
+.Item2{
+    grid-area:Personal;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    /*grid-column:1/span 1;
+    grid-row:2/span 4;*/
+    width:45vw;
+    height:65vh;
+    padding: 20px;
+    border: gray solid;
+    background-color: #E8E8E8;
+
+}
+
+.Item2Det{
+    width:20vw;
+    height:50vh;
+    padding: 0px;
+    font-size: 15px;
+    font-family: Tahoma;
+    color: black;
+}
+.button{
+    font-size: 25px;
+    font-family: fantasy;
+    color: #AED1FE;
+    border: none;
+}
+.Item3Res{
+    padding: 0px;
+    font-size: 15px;
+    font-family: Tahoma;
+    color: black;
+}
+
+.Item3 {
+    grid-area:Experience;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    /*grid-column:2/span 4;
+    grid-row: 2/span 4;*/
+    width:65vw;
+    height:65vh;
+    padding:20px;
+    border: gray solid;
+    background-color: #E8E8E8;
+}
+
+.Item4 {
+    grid-area:Experience;
+    grid-column:4/span 4;
+    grid-row: 1/span 1;
+    width: 18vw;
+    padding:5px;
+    border: gray solid;
+    font-size: 25px;
+    font-family: fantasy;
+    color: #AED1FE;
+}
+.Item4Co{
+    padding: 0px;
+    font-size: 15px;
+    font-family: Tahoma;
+    color: black;
+}
+#photo{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width:200px;
+    height:130px;
+}
+
+@media screen and (max-width: 900px) {
+    .Item4Co{
+        font-size: 10px;
+    }
+    #photo{
+        width:120px;
+    }
+    .Item1{
+        font-size:25px;
+    }
+    .Item3Res{
+        font-size:10px;
+    }
+    .Item2Det{
+        font-size:10px;
+    }
+}
