@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>assignment9</title>
 </head>
 <body>
+{% if firstName %}
+  <h2>Welcome {{firstName}} {{lastName}}</h2>
+  <form method="GET" action="/assignment9">
+  <input type="submit" name="Log Out" value="Log Out">
+  </form>
 
+    {% if role %}
+        {% if role == 'CEO' %}
+        <h1>The following recommended: </h1>
+        <h3>{{role}}</h3>
+        <h3>Micheal Lawson</h3>
+        <h3>Email: michael.lawson@reqres.in</h3>
+        {% elif role == 'Team Leader' %}
+        <h1>The following recommended: </h1>
+        <h3>{{role}}</h3>
+        <h3>Lindsay Ferguson</h3>
+        <h3>Email: linsday.ferguson@reqres.in</h3>
+        {% elif role == 'Co-Worker' %}
+        <h1>The following recommended</h1>
+        <h3>{{role}}</h3>
+        <h3>George Edwards</h3>
+        <h3>Email: george.edwards@reqres.in</h3>
+        {% else %}
+        <h2>There are no recommendations like that</h2>
+        {% endif %}
+    {% else %}
+
+    <form method='GET' action="/assignment9">
+        <input type="text" name="role" placeholder="role">
+        <input type="text" name="userFirstName" placeholder="first name">
+        <input type="text" name="userLastName" placeholder="last name">
+        <input type="email" name="email" placeholder="email">
+        <input type="submit" name="submit">
+    </form>
+    <h2>All recommendations:</h2>
+        <h3>CEO</h3>
+        <h3>Micheal Lawson</h3>
+        <h3>Email: michael.lawson@reqres.in</h3>
+    <br>
+        <h3>Team Leader</h3>
+        <h3>Lindsay Ferguson</h3>
+        <h3>Email: linsday.ferguson@reqres.in</h3>
+    <br>
+        <h3>Co-Worker</h3>
+        <h3>George Edwards</h3>
+        <h3>Email: george.edwards@reqres.in</h3>
+    {% endif%}
+{% else %}
+    <h1>Welcome!</h1>
+    <br>
+    <h2>Please enter your name</h2>
+         <form method='POST' action="/assignment9">
+             <input type="text" name="firstName" placeholder="First Name">
+             <input type="text" name="lastName" placeholder="Last Name">
+             <input type="submit">
+        </form>
+{% endif %}
 </body>
 </html>
