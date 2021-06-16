@@ -8,8 +8,8 @@ app.secret_key = "super secret key"
 from pages.assignment10.assignment10 import assignment10
 app.register_blueprint(assignment10)
 
-
-
+from pages.assignment11.users import users
+app.register_blueprint(users)
 
 
 @app.route('/main')

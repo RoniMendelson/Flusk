@@ -73,7 +73,7 @@ def update_user():
     if len(query_result) > 0:
         query = "UPDATE users SET role = '%s' WHERE email = '%s';" % (role, email)
         interact_db(query=query, query_type='commit')
-        flash ('The user has been updated')
+        flash('The user has been updated')
         return redirect('/assignment10')
     else:
         flash(f'user {role} does not exist')
