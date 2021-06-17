@@ -4,7 +4,7 @@ from flask import jsonify, json, Response
 
 users = Blueprint('assignment11', __name__,
                          static_folder='static',
-                         static_url_path='/pages/assignment11/assignment11/users',
+                         static_url_path='/pages/assignment11/users',
                          template_folder='templates')
 
 
@@ -42,7 +42,9 @@ def find():
 @users.route('/assignment11/users/selected', defaults={'ID': 4})
 @users.route('/assignment11/users/selected/<int:ID>')
 def select_user(ID):
-    user_exist = ID in range(1, 4)
+    query = "select * FROM users"
+    query_result = interact_db(query=query, query_type='fetch')
+    user_exist = ID in range(1, len(query_result)+1)
     if ID == 4:
         query = "select * FROM users WHERE ID = '%s';" %ID
         query_result = interact_db(query=query, query_type='fetch')
@@ -57,10 +59,3 @@ def select_user(ID):
         return jsonify({'success': 'False',
                         'data': 'user doesnt exist'})
 
-
-# @users.route('/assignment11/users/selected', defaults={'ID': 4})
-# def default():
-#     query = "select * FROM users WHERE ID = null"
-#     query_result = interact_db(query=query, query_type='fetch')
-#     response = jsonify(query_result)
-#     return response
